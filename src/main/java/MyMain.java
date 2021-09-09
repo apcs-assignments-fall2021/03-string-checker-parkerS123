@@ -16,6 +16,7 @@ public class MyMain {
                 counterABC = counterABC + 1;
             }
 
+
         }
         System.out.println("There were " + counterABC + " A's, B's, and C's");
         return -1;
@@ -25,11 +26,14 @@ public class MyMain {
     public static boolean containsThe(String str) {
         int y = str.indexOf("The");
         int x = str.indexOf("the");
-        if (y == -1 || x == -1) {
+        if (y == -1 && x == -1) {
+            System.out.println("Your statement didn't contain THE");
             return false;
         }
         else {
+            System.out.println("Your statement did contain THE");
             return true;
+
             }
 
         }
@@ -39,18 +43,19 @@ public class MyMain {
 
     // Checks whether str is a palindrome or not
     public static boolean isPalindrome(String str) {
-        int len = str.length();
-        for (int i = 0; i < str.length(); i++)
-            if (str.charAt(i).equals(str.charAt(len))) {
+        int len = str.length() - 1;
+        for (int i = 0; i <= str.length(); i++) {
+            if (str.charAt(i) == str.charAt(len)) {
                 len = len - 1;
-                if (len = 0) {
-                    return true;
+                if (len == 0) {
+                    System.out.println("This is a palindrome");
                 }
+            } else {
+                System.out.println("This is not a palindrome");
             }
-            else {
-                return false;
-            }
+        }
 
+        return false;
 
     }
     
@@ -58,7 +63,13 @@ public class MyMain {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // System.out.println("Enter a word please: ")
-        // String str = scan.nextLine()
+        System.out.println("Enter a word please: ");
+        String str = scan.nextLine();
+
+        System.out.println(countABC(str));
+        System.out.println(containsThe(str));
+        System.out.println(isPalindrome(str));
+
+
     }
 }
