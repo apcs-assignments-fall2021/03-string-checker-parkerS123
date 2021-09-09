@@ -58,6 +58,7 @@ public class MyMain {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // YOUR CODE HERE
+        // System.out.println("Enter a word please: ")
+        // String str = scan.nextLine()
     }
 }
