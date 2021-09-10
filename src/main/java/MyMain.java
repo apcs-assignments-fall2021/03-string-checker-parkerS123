@@ -6,16 +6,9 @@ public class MyMain {
     public static int countABC(String str) {
         int counterABC = 0;
         for (int i = 0; i < str.length(); i++) {
-            if (str.indexOf("a") != -1) {
+            if (str.charAt(i) == 'a' || (str.charAt(i) == 'b') || (str.charAt(i) == 'c')) {
                 counterABC = counterABC + 1;
             }
-            else if (str.indexOf("c") != -1) {
-                counterABC = counterABC + 1;
-            }
-            else if (str.indexOf("b") != -1); {
-                counterABC = counterABC + 1;
-            }
-
 
         }
         System.out.println("There were " + counterABC + " A's, B's, and C's");
@@ -44,7 +37,7 @@ public class MyMain {
     // Checks whether str is a palindrome or not
     public static boolean isPalindrome(String str) {
         int len = str.length() - 1;
-        for (int i = 0; i <= str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == str.charAt(len)) {
                 len = len - 1;
                 if (len == 0) {
@@ -52,6 +45,7 @@ public class MyMain {
                 }
             } else {
                 System.out.println("This is not a palindrome");
+                break;
             }
         }
 
