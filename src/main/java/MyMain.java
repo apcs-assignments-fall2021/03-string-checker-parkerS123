@@ -12,7 +12,7 @@ public class MyMain {
 
         }
         System.out.println("There were " + counterABC + " A's, B's, and C's");
-        return -1;
+        return counterABC;
     }
 
     // Checks to see whether or not str contains 'The' or 'the'
@@ -42,6 +42,7 @@ public class MyMain {
                 len = len - 1;
                 if (len == 0) {
                     System.out.println("This is a palindrome");
+                    return true;
                 }
             } else {
                 System.out.println("This is not a palindrome");
